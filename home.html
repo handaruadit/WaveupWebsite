@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - WaveUp</title>
+<link rel="stylesheet" href="style-global.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT ME</a></li>
+            <li><a href="index.html">LOG OUT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section style="flex:1; padding:30px; display:flex; justify-content:center; gap:40px; align-items:center;">
+
+    <div class="card" style="max-width:400px; text-align:center;">
+        <button class="btn btn-primary" onclick="location.href='vndua.html'" style="width:100%; margin-bottom:10px;">IDENTIFIKASI MASALAH</button>
+        <button class="btn btn-primary" onclick="location.href='perencanaan.html'" style="width:100%; margin-bottom:10px;">PERENCANAAN</button>
+        <button class="btn btn-primary" onclick="location.href='ekspphet.html'" style="width:100%; margin-bottom:10px;">EKSPERIMEN</button>
+        <button class="btn btn-primary" onclick="location.href='solusi.html'" style="width:100%; margin-bottom:10px;">SOLUSI</button>
+        <button class="btn btn-primary" onclick="location.href='start.html'" style="width:100%; margin-bottom:10px;">KUIS</button>
+        <button class="btn btn-primary" onclick="location.href='feedback.html'" style="width:100%; margin-bottom:10px;">REFLEKSI</button>
+        <button class="btn btn-primary" onclick="location.href='materi.html'" style="width:100%;">MATERI</button>
+    </div>
+
+    <div class="card" style="max-width:400px; text-align:center;">
+        <img src="komandan.png" onclick="showText()" style="width:200px; cursor:pointer;">
+        <p id="image-text" style="margin-top:12px; font-size:15px; opacity:0.9;">
+            "Bersiap untuk menyelesaikan misi!!!"
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    &copy; 2025 Platform Pembelajaran Fisika
+</footer>
+
+<script>
+function showText(){
+    document.getElementById("image-text").innerText = "Ayo mulai misinya, Agen!";
+}
+</script>
+
+</body>
+</html>

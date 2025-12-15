@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Analisis Intelijen Lapangan — LKPD MISI SAR</title>
+
+  <!-- GLOBAL THEME -->
+  <link rel="stylesheet" href="style-global.css">
+
+  <style>
+    /* Override ukuran heading agar pas */
+    h1 {
+      font-size: 22px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .card {
+      background: var(--bg-dark);
+      border: 1px solid var(--glass-border);
+      padding: 22px;
+      border-radius: 14px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px 0;
+      font-weight: 600;
+    }
+
+    textarea,
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: #e8f4ff;
+      resize: vertical;
+      min-height: 64px;
+      font-size: 14px;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      flex: 1 1 320px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    button {
+      background: var(--accent);
+      color: #042a34;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    button.ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--glass-border);
+    }
+
+    .summary {
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #dff7ff;
+      font-weight: 600;
+    }
+
+    .present-instruct {
+      margin-top: 12px;
+      padding: 14px;
+      background: rgba(0, 80, 110, 0.35);
+      border-radius: 10px;
+      color: #cfefff;
+    }
+
+    .checklist li {
+      margin: 6px 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT ME</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+
+  <!-- ALL SECTIONS -->
+
+  <form action="submit_solusi.php" method="POST">
+    <section class="card" id="q1">
+      <h2>1. Hubungan Frekuensi dan Panjang Gelombang</h2>
+      <div class="small">Berdasarkan data pada tabel kalian:</div>
+
+      <label for="q1a">a) Ketika frekuensi meningkat, apa yang terjadi pada panjang gelombang?</label>
+      <textarea id="q1a" name="q1a"></textarea>
+
+      <label for="q1b">b) Mengapa pola itu muncul?</label>
+      <textarea id="q1b" name="q1b"></textarea>
+
+      <label for="q1c">c) Bagaimana pola ini membantu tim menebak arah atau kedekatan sumber suara korban?</label>
+      <textarea id="q1c" name="q1c"></textarea>
+    </section>
+
+    <section class="card" id="q2">
+      <h2>2. Analisis Kecepatan Bunyi (v)</h2>
+
+      <label for="q2a">a) Masukkan nilai v yang kalian hitung (pisahkan dengan koma).</label>
+      <!-- <input id="q2a" type="text" /> -->
+      <textarea id="q2a" name="q2a"></textarea>
+
+      <label for="q2b">b) Apakah nilai v mirip atau berbeda jauh?</label>
+      <textarea id="q2b" name="q2b"></textarea>
+    </section>
+
+    <section class="card" id="q3">
+      <h2>3. Konsistensi Kecepatan Bunyi</h2>
+
+      <label for="q3a">a) Nilai v berkumpul di kisaran berapa?</label>
+      <!-- <input id="q3a" type="text" /> -->
+      <textarea id="q3a" name="q3a"></textarea>
+
+      <label for="q3b">b) Mengapa kecepatan bunyi tidak berubah banyak?</label>
+      <textarea id="q3b" name="q3b"></textarea>
+    </section>
+
+    <section class="card" id="q4">
+      <h2>4. Faktor Kesalahan Pengukuran</h2>
+
+      <label for="q4a">a) Sebutkan 3 hal di terowongan yang membuat sinyal sulit dibaca.</label>
+      <textarea id="q4a" name="q4a"></textarea>
+
+      <label for="q4b">b) Cara mengurangi kesalahan.</label>
+      <textarea id="q4b" name="q4b"></textarea>
+    </section>
+
+    <section class="card" id="presentation1">
+      <h2>5. Evaluasi Perbandingan Antar Regu SAR</h2>
+
+      <div class="small">Komandan: “Cocokkan hasil kalian dengan regu lain!”</div>
+
+      <label for="compareNotes">Catatan singkat perbandingan:</label>
+      <textarea id="compareNotes" name="note"></textarea>
+    </section>
+
+    <!-- <section class="card" id="presentation"> -->
+    <!-- <h2>6. Gambarkan kembali salah satu grafik Gelombang Bunyi dari hasil percobaan, kemudian jelaskan apa maksudnya  – Upload / Lampirkan PDF</h2>
+  <div class="small">
+    Unggah grafik gelombang hasil analisis kalian (boleh PDF, PNG, atau JPG).
+  </div> -->
+
+    <!-- <label for="waveFile">Upload File Grafik (PDF / Gambar):</label>
+  <input id="waveFile" type="file" accept=".pdf,.png,.jpg,.jpeg" /> -->
+
+    <!-- <div id="wavePreview" class="summary" style="display:none; margin-top:12px;">
+    <strong>Pratinjau Grafik:</strong>
+    <div id="waveContent" style="margin-top:10px;"></div>
+  </div> -->
+    </section>
+    <section class="card" id="presentation2">
+      <strong>Instruksi Presentasi:</strong>
+      <ol>
+        <li>Tunjukkan perbandingan hasil.</li>
+        <li>Jelaskan kesamaan/kesalahan data.</li>
+        <li>Berikan dugaan penyebab perbedaan.</li>
+        <li>Simpulkan rekomendasi.</li>
+      </ol>
+      <ul class="checklist">
+        <li><input type="checkbox" id="chk1"> Rangkuman v disiapkan</li>
+        <li><input type="checkbox" id="chk2"> Alasan perbedaan siap</li>
+        <li><input type="checkbox" id="chk3"> Saran perbaikan siap</li>
+      </ul>
+      <!-- </div> -->
+    </section>
+
+    <div id="savedBox" class="summary" style="display:none"></div>
+    <div id="presentBox" class="present-instruct" style="display:none;margin-top:10px"></div>
+    <!-- </section> -->
+
+    <section class="card" id="conclusion">
+      <h2>✨ G. Laporan Akhir Misi</h2>
+
+      <label for="g1">1. Pola hubungan f, λ, T</label>
+      <textarea id="g1" name="g1"></textarea>
+
+      <label for="g2">2. Rata-rata kecepatan bunyi & konsistensi</label>
+      <!-- <input id="g2" type="text" /> -->
+      <textarea id="g2" name="g2"></textarea>
+
+      <label for="g3">3. Manfaat analisis untuk misi SAR</label>
+      <textarea id="g3" name="g3"></textarea>
+
+      <div class="actions">
+        <button id="saveFinal" type="submit">Simpan Laporan Akhir</button>
+        <button id="downloadBtn" type="button" class="ghost">Download (.txt)</button>
+      </div>
+
+      <div id="finalBox" class="summary" style="display:none"></div>
+    </section>
+  </form>
+
+
+  <div style="text-align:center; margin:30px 0;">
+    <a href="start.html" class="btn-next">NEXT ➜</a>
+  </div>
+
+  <!-- </div> -->
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Platform Pembelajaran Fisika — Regu SAR
+  </footer>
+
+  <!-- SCRIPT (tetap sama, tidak diubah) -->
+  <script>
+    /* semua script tetap digunakan */
+  </script>
+
+</body>
+
+</html>

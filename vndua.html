@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Halaman 7 - Tes Suara Komandan</title>
+
+  <!-- =========================
+       GLOBAL THEME WAVEUP
+       ========================= -->
+  <style>
+    :root{
+        --accent: #00c8ff;
+        --accent-dark: #0077b6;
+        --bg-dark: rgba(0,0,0,0.55);
+    }
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Poppins', sans-serif;
+    }
+
+    body{
+        background: url('back.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #eaf6ff;
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+    }
+
+    /* HEADER */
+    header{
+        width:100%;
+        background: rgba(0,0,0,0.65);
+        padding:16px 0;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    header nav ul{
+        list-style:none;
+        display:flex;
+        justify-content:center;
+        gap:28px;
+    }
+
+    header nav ul li a{
+        color:white;
+        text-decoration:none;
+        font-weight:600;
+        transition:0.3s;
+    }
+
+    header nav ul li a:hover{
+        color:var(--accent);
+    }
+
+    /* FOOTER */
+    footer{
+        background: rgba(0,0,0,0.7);
+        padding:10px;
+        text-align:center;
+        color:#d8f3ff;
+        font-size:14px;
+        backdrop-filter: blur(6px);
+        border-top:1px solid var(--glass-border);
+    }
+
+    /* WRAPPER */
+    .main-wrapper{
+        flex:1;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:40px 20px;
+    }
+
+    /* CARD */
+    .card{
+        width:100%;
+        max-width:900px;
+        margin:auto;
+        background: var(--bg-dark);
+        border-radius:16px;
+        padding:32px;
+        backdrop-filter: blur(20px);
+        box-shadow:0 10px 35px rgba(0,0,0,0.55);
+        border:1px solid var(--glass-border);
+        animation:fadeIn 0.6s ease;
+    }
+
+    /* BUTTONS */
+    .btn{
+        padding:12px 24px;
+        border-radius:10px;
+        font-weight:700;
+        cursor:pointer;
+        border:none;
+        transition:0.3s;
+    }
+
+    .btn-primary, .btn-yes{
+        background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+        color:#001;
+        box-shadow:0 0 14px rgba(0,200,255,0.45);
+    }
+
+    .btn-primary:hover, .btn-yes:hover{
+        transform:scale(1.05);
+        box-shadow:0 0 20px rgba(0,200,255,0.75);
+    }
+
+    .btn-no, .btn-repeat{
+        background: transparent;
+        border:1px solid rgba(255,255,255,0.25);
+        color:white;
+    }
+
+    .btn-no:hover, .btn-repeat:hover{
+        background: rgba(255,255,255,0.08);
+    }
+
+    .btn-ok{
+        background: var(--accent);
+        color:#001018;
+        padding:12px 28px;
+        font-size:16px;
+        border-radius:10px;
+        font-weight:700;
+        cursor:pointer;
+        box-shadow:0 0 10px rgba(0,180,255,0.6);
+        transition:0.3s;
+        border:none;
+    }
+
+    .btn-ok:hover{
+        box-shadow:0 0 20px rgba(0,180,255,0.9);
+        transform:scale(1.05);
+    }
+
+    .controls{
+        margin-top:18px;
+        display:flex;
+        justify-content:center;
+        gap:14px;
+    }
+
+    .lambang{
+        width:170px;
+        margin:25px auto 10px auto;
+        display:block;
+        filter: drop-shadow(0 0 10px rgba(0,180,255,0.5));
+    }
+
+     .bagan{
+        width:830px;
+        margin:25px auto 10px auto;
+        display:block;
+        filter: drop-shadow(0 0 10px rgba(0,180,255,0.5));
+    }
+
+    .competencies{
+        background: rgba(255,255,255,0.07);
+        border-left:4px solid var(--accent);
+        padding:14px;
+        border-radius:10px;
+        margin-top:14px;
+    }
+
+    ul li{
+        margin-left:18px;
+        padding:4px 0;
+    }
+
+    .center{
+        text-align:center;
+    }
+
+    .hidden{
+        display:none;
+    }
+
+    @keyframes fadeIn {
+      from{ opacity:0; transform:translateY(12px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT ME</a></li>
+        <li><a href="index.html">LOG OUT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="main-wrapper">
+  <div class="card">
+
+    <!-- INTRO -->
+    <div id="intro" class="center">
+      <h1 style="color:var(--accent); margin-bottom:12px;">Dengarkan suara berikut, apakah suaranya terdengar?</h1>
+
+      <audio id="audio-komandan" preload="auto">
+        <source src="suara 1.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="controls">
+        <button class="btn btn-yes" id="btn-yes">Ya</button>
+        <button class="btn btn-no" id="btn-no">Tidak</button>
+
+      </div>
+
+    </div>
+
+    <!-- AFTER YES -->
+    <div id="after-yes" class="hidden">
+      <img src="super.jpg" class="lambang">
+
+      <p class="center">
+        Bagus. Selamat datang, agen baru. Kamu baru saja menyetujui perjanjian untuk bergabung dengan Tim SAR WaveUp. Saya komandan Andri, Komandan tim SAR WaveUp! Dalam operasi ini, kamu akan belajar bagaimana suara dapat menjadi petunjuk penyelamatan nyawa.
+      </p>
+
+      <div class="center" style="margin-top:15px;">
+        <button class="btn-ok" id="btn-ok-lanjut">Ok, lanjutkan</button>
+      </div>
+    </div>
+
+    <!-- KOMPETENSI -->
+    <div id="kompetensi-area" class="hidden">
+
+      <p><b>Sebelum kita mulai misi pertama, kamu harus menguasai materi prasyarat yaitu Gelombang & Getaran. Kemudian setelah mengikuti misi gelombang bunyi ini, diharapkan kamu akan mampu:</b></p>
+      
+      <div class="competencies">
+        <ul>
+          <li>3.10.1	Menjelaskan pengertian gelombang bunyi</li>
+          <li>3.10.2	Mengidentifikasi karateristik gelombang bunyi</li>
+          <li>3.10.3	Menganalisis perbedaan bunyi berdasarkan tinggi-rendahnya bunyi, kualitas/warna bunyi dan kuat lemahnya bunyi</li>
+          <li>3.10.4	Menganalisis nada-nada daan frekeunsi gelombang bunyi pada dawai, pipa organa terbuka, dan pipa organa tertutup</li>
+          <li>3.10.5	Menganalisis cepat rambat gelombang bunyi pada medium zat padat, gas, cair</li>
+          <li>3.10.6	Mengidentifikasi gejala-gejala gelombang bunyi pada kehidupan sehari-hari</li>
+          <li>3.10.7	Menganalisis energi, intensitas, dan taraf intensitas pada gelombang bunyi</li>
+          <li>3.10.8	Menganalisis contoh aplikasi gelombang bunyi dalam kehidupan sehari-hari</li>
+        </ul>
+      </div>
+
+      <p><b>Adapun materi esensial dari gelombang bunyi:</b></p>
+      <div class="competencies">
+        <ul>
+          <li>1.	Karakteristik gelombang bunyi</li>
+          <li>2.	Cepat rambat gelombang bunyi pada medium</li>
+          <li>3.	Gejala gelombang bunyi</li>
+          <li>4.	Gelombang stationer pada alat penghasil bunyi</li>
+          <li>5.	Energi dan intensitas gelombang bunyi</li>
+          <li>6.	Aplikasi gelombang bunyi</li>
+        </ul>
+      </div>
+
+            <p><b>Dengan bagan materi sebagai berikut:</b></p>
+            <div class="center">
+  
+      <img src="bagan.png" class="bagan">
+
+            </div>
+      <div class="center" style="margin-top:20px;">
+        <a href="halaman2.html"><button class="btn btn-yes">Lanjutkan</button></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2025 Platform Pembelajaran Fisika
+</footer>
+
+<script>
+  const audio = document.getElementById('audio-komandan');
+  const btnYes = document.getElementById('btn-yes');
+  const btnNo = document.getElementById('btn-no');
+
+  const intro = document.getElementById('intro');
+  const afterYes = document.getElementById('after-yes');
+  const kompetensi = document.getElementById('kompetensi-area');
+  const btnOk = document.getElementById('btn-ok-lanjut');
+
+  function playAudioFromStart() {
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});
+  }
+
+  window.onload = () => playAudioFromStart();
+
+
+  btnNo.onclick = () => playAudioFromStart();
+
+  btnYes.onclick = () => {
+    audio.pause();
+    intro.classList.add("hidden");
+    afterYes.classList.remove("hidden");
+  };
+
+  btnOk.onclick = () => {
+    afterYes.classList.add("hidden");
+    kompetensi.classList.remove("hidden");
+    setTimeout(() => kompetensi.scrollIntoView({behavior: "smooth"}), 200);
+  };
+</script>
+
+</body>
+</html>

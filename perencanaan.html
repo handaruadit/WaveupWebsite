@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD – Pra Simulasi Misi SAR</title>
+
+    <!-- Tema global -->
+    <link rel="stylesheet" href="style-global.css">
+
+    <style>
+        /* Warna teks paragraf */
+        p,
+        label,
+        td,
+        th {
+            color: #e8f4ff;
+        }
+
+        h1,
+        h2 {
+            color: var(--accent);
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 80px;
+            margin-top: 6px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.12);
+            color: #e8f4ff;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+        }
+
+        /* Tombol next */
+        .next-btn {
+            margin-top: 30px;
+            display: block;
+            width: 260px;
+            text-align: center;
+            padding: 14px;
+            background: var(--accent);
+            color: #03101f;
+            font-weight: bold;
+            font-size: 17px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 14px rgba(0, 200, 255, 0.35);
+        }
+
+        .next-btn:hover {
+            background: #00d8ff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT ME</a></li>
+                <li><a href="index.html">LOG OUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+        <form action="submit_perencanaan.php" method="POST">
+            <div class="card">
+                <h1>Perencanaan</h1>
+
+                <!-- SECTION A -->
+                <div class="card" style="margin-top:25px;">
+                    <h2>A. Pembukaan Misi (Studi Kasus)</h2>
+
+                    <p>
+                        <b>Komandan:</b><br>
+                        “Regu, kita menerima laporan adanya suara teriakan samar dari dalam terowongan.
+                        Tidak ada visual korban, dan kondisi dalam gelap. Semua keputusan awal harus
+                        kalian buat berdasarkan <u>suara</u> saja.”
+                    </p>
+
+                    <label>1. Berdasarkan deskripsi di atas, menurutmu korban berada di posisi mana? Jelaskan dugaan
+                        awalmu.</label>
+                    <textarea name="jawaban1" required></textarea>
+
+                    <label>2. Menurutmu, apakah lingkungan terowongan akan menimbulkan gema? Jika ya, bagaimana itu
+                        memengaruhi pencarian?</label>
+                    <textarea name="jawaban2" required></textarea>
+
+
+
+                </div>
+
+                <!-- SECTION B -->
+                <div class="card" style="margin-top:25px;">
+                    <h2>B. Hipotesis Regu (Dugaan Awal)</h2>
+
+                    <label>1. Prediksi hubungan: jika frekuensi suara korban meningkat, apa yang terjadi pada panjang
+                        gelombang?</label>
+                    <textarea name="jawaban3" required></textarea>
+
+                    <label>2. Apakah menurutmu kecepatan bunyi akan berubah banyak saat frekuensi berubah? Jelaskan
+                        logikamu.</label>
+                    <textarea name="jawaban4" required></textarea>
+
+                    <label>3. Faktor apa saja yang kamu duga dapat mengganggu pendengaran atau pembacaan suara di
+                        terowongan?</label>
+                    <textarea name="jawaban5" required></textarea>
+
+                    <label>4. Menurut logikamu, apakah suara yang keras berarti korban dekat? Jelaskan
+                        pendapatmu.</label>
+                    <textarea name="jawaban6" required></textarea>
+
+                </div>
+
+
+                <div class="card" style="margin-top:25px;">
+                    <h2>C. Perencanaan Penyelesaian Misi SAR</h2>
+
+                    <p><b>Instruksi:</b> Susun rencana kerja sebelum memasuki simulasi, seperti tim SAR profesional.</p>
+
+                    <label>1. Informasi awal apa saja yang perlu dikumpulkan sebelum melakukan pengukuran?</label>
+                    <textarea name="jawaban7" required></textarea>
+
+                    <label>2. Variabel apa yang akan kalian ukur di simulasi? Jelaskan alasannya.</label>
+
+                    <table>
+                        <tr>
+                            <th>Variabel</th>
+                            <th>Akan Diukur? (Ya/Tidak)</th>
+                            <th>Alasan</th>
+                        </tr>
+
+                        <tr>
+                            <td>Frekuensi (f)</td>
+                            <td><input type="text" name="jawaban8" required></td>
+                            <td><input type="text" name="jawaban9" required></td>
+                        </tr>
+
+                        <tr>
+                            <td>Panjang Gelombang (λ)</td>
+                            <td><input type="text" name="jawaban10" required></td>
+                            <td><input type="text" name="jawaban11" required></td>
+                        </tr>
+
+                        <tr>
+                            <td>Periode (T)</td>
+                            <td><input type="text" name="jawaban12" required></td>
+                            <td><input type="text" name="jawaban13" required></td>
+                        </tr>
+
+                        <tr>
+                            <td>Indikasi Gema</td>
+                            <td><input type="text" name="jawaban14" required></td>
+                            <td><input type="text" name="jawaban15" required></td>
+                        </tr>
+                    </table>
+
+                    <label>3. Bagaimana strategi regu dalam mengukur λ dan T agar hasil lebih akurat?</label>
+                    <textarea name="jawaban16" required></textarea>
+
+                    <label>4. Tuliskan dugaan awal hasil perhitungan (tanpa simulasi): apakah v (kecepatan bunyi) nanti
+                        akan
+                        stabil atau berubah?</label>
+                    <textarea name="jawaban17" required></textarea>
+
+                    <label>5. Buatlah rencana alur keputusan (decision plan) regu SAR berdasarkan kemungkinan pola suara
+                        korban.</label>
+                    <textarea name="jawaban18" required></textarea>
+                </div>
+
+                <!-- NEXT BUTTON -->
+                <button type="submit" class="next-btn">
+                    Simpan & Mulai Simulasi ➜
+                </button>
+        </form>
+        
+
+    </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Platform Pembelajaran Fisika
+    </footer>
+
+</body>
+
+</html>

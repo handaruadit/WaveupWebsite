@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Pembuat – Platform Pembelajaran Fisika</title>
+
+    <style>
+        :root {
+            --accent: #0d1b1e;
+            --accent-dark: #181c1e;
+            --bg-dark: rgba(0,0,0,0.55);
+            --glass-border: rgba(14, 14, 14, 0.12);
+            --text-light: #e9f7ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background: url("back.jpg") no-repeat center/cover fixed;
+            min-height: 100vh;
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            border-bottom: 1px solid var(--glass-border);
+            backdrop-filter: blur(8px);
+            padding: 15px 25px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        header nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        header nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* ===== CONTENT ===== */
+        .content {
+            flex: 1;
+            width: 92%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(18, 13, 13, 0.07);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(700px);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.45);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--accent);
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 22px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .bio-list {
+            list-style: none;
+            padding-left: 0;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .bio-list li strong {
+            color: var(--accent);
+        }
+
+        .desc-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 14px;
+            border: 1px solid var(--glass-border);
+            line-height: 1.7;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0,0,0,0.55);
+            border-top: 1px solid var(--glass-border);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT ME</a></li>
+                <li><a href="index.html">LOG OUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="content">
+        <h2>Halo, Ini Aku!</h2>
+        <h3>Profil Singkat Pembuat Platform Pembelajaran</h3>
+
+        <ul class="bio-list">
+            <li><strong>Nama:</strong> Andriani Marshanda</li>
+            <li><strong>Email:</strong> andriani.marshanda32@upi.edu</li>
+            <li><strong>No. WA:</strong> 08111</li>
+        </ul>
+
+        <div class="desc-box">
+            <p>
+                Saya adalah pengembang dari e-modul pembelajaran fisika berbasis PBL (Problem Based Learning),
+                di mana seluruh alur pembelajaran dikemas menjadi <strong>misi penyelamatan Tim SAR</strong>.
+            </p>
+            <p>
+                Pengembangan ini bertujuan agar siswa tidak hanya membaca materi, tetapi juga merasakannya
+                langsung melalui simulasi, analisis suara, peta hutan, investigasi, dan pengambilan keputusan
+                layaknya penyelamat profesional.
+            </p>
+            <p>
+                Semoga platform ini bisa membantu proses belajar menjadi lebih seru, interaktif,
+                dan bermakna.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2025 Platform Pembelajaran Fisika</p>
+    </footer>
+
+</body>
+</html>

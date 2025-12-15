@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis SAR – Gelombang Bunyi</title>
+
+  <!-- GLOBAL THEME -->
+  <link rel="stylesheet" href="style-global.css">
+
+  <style>
+    /* Tambahan khusus halaman kuis */
+
+    body {
+      background: url("back.jpg") center/cover no-repeat fixed;
+    }
+
+    /* Judul */
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 700;
+      text-shadow: 0 0 6px rgba(0, 200, 255, 0.4);
+    }
+
+    /* Card kuis */
+    .quiz-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Pertanyaan */
+    .question {
+      font-size: 18px;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    /* Opsi */
+    .option {
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      transition: 0.25s;
+    }
+
+    .option:hover {
+      background: rgba(0, 200, 255, 0.08);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 12px rgba(0, 200, 255, 0.25);
+    }
+
+    /* Tombol Next */
+    .next-btn,
+    .submit-btn {
+      margin-top: 20px;
+      padding: 12px 22px;
+      border: none;
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      color: #042a34;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 6px 20px rgba(0, 200, 255, 0.4);
+    }
+
+    .next-btn:hover,
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(0, 200, 255, 0.55);
+    }
+
+    /* Skor */
+    .result {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 700;
+      color: #00eaff;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    }
+
+    /* Essay */
+    textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.02);
+      color: white;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    textarea:focus {
+      outline: none;
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 12px rgba(0, 200, 255, 0.3);
+    }
+
+    /* Next Link */
+    .next-link {
+      background: var(--accent);
+      padding: 12px 22px;
+      border-radius: 12px;
+      color: #021c2f;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
+      margin-top: 20px;
+    }
+
+    .next-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.45);
+    }
+  </style>
+  <link rel="stylesheet" href="style-global.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="logout.html">LOG OUT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-wrapper">
+
+    <div class="card quiz-card">
+
+      <h1>Kuis Misi SAR – Gelombang Bunyi</h1>
+
+      <div id="quizBox"></div>
+
+      <button id="nextBtn" class="next-btn">Next ➜</button>
+      <button id="finishBtn" class="submit-btn">Lihat Skor</button>
+
+      <div id="resultBox" class="result"></div>
+
+      <!-- ESSAY -->
+      <form action="submit_essay.php" method="POST">
+        <div id="essaySection" style="display:none; margin-top:25px;">
+
+          <h2 style="color:var(--accent); margin-bottom:10px;">Bagian B – Uraian Analisis</h2>
+
+          <label>1. Bandingkan nilai v tiap percobaan. Apakah perbedaan karena alat atau kesalahan regu?</label>
+          <textarea name="jawaban1" required></textarea>  
+
+          <label>2. Pada terowongan sempit, apa 2 kesulitan menentukan arah suara dan bagaimana mengatasinya?</label>
+          <textarea name="jawaban2" required></textarea>
+
+          <label>3. Frekuensi suara korban naik saat regu mendekat. Jelaskan fenomenanya.</label>
+          <textarea name="jawaban3" required></textarea>
+
+          <label>4. Berdasarkan tabel kalian, apa pola hubungan f, λ, dan T?</label>
+          <textarea name="jawaban4" required></textarea>
+
+          <label>5. Jika data regu berbeda dengan regu lain, apa 3 penyebab paling logis?</label>
+          <textarea name="jawaban5" required></textarea>
+
+          <input type="hidden" name="score" id="finalScore">
+          <div style="text-align:center; margin-top:30px;">
+            <button type="submit" class="next-link">KIRIM JAWABAN </button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+  <script>
+    /* DATA SOAL */
+    const questions = [
+      {
+        q: "Regu mendengar suara asli dan gema 0,3 s setelahnya. Apa maknanya?",
+        options: ["Korban menjauh", "Ada permukaan pemantul jauh", "Frekuensi korban rendah", "Medium udara padat"],
+        answer: 1
+      },
+      {
+        q: "Frekuensi suara korban meningkat saat tim mendekat. Fenomena ini adalah…",
+        options: ["Interferensi", "Difraksi", "Efek Doppler", "Resonansi"],
+        answer: 2
+      },
+      {
+        q: "Di simulasi, λ menurun saat frekuensi naik karena…",
+        options: ["Kecepatan bunyi turun", "Medium berubah", "Produk f × λ cenderung tetap", "Timer salah baca"],
+        answer: 2
+      },
+      {
+        q: "Suara langkah tim terdengar keras di lorong sempit. Ini contoh…",
+        options: ["Difraksi", "Resonansi", "Gaung", "Interferensi destruktif"],
+        answer: 2
+      },
+      {
+        q: "Jika salah mengukur λ sehingga lebih besar dari seharusnya maka v akan…",
+        options: ["Terlalu kecil", "Frekuensi berubah", "Periode membesar", "Terlalu besar"],
+        answer: 0
+      },
+      {
+        q: "Nilai v hampir sama meskipun f berubah, artinya…",
+        options: ["v dipengaruhi amplitudo", "v dipengaruhi medium", "v mengikuti perubahan f", "v dipengaruhi energi"],
+        answer: 1
+      },
+      {
+        q: "Jika λ bertambah dan f turun, maka…",
+        options: ["Periode membesar", "Periode mengecil", "Kecepatan bunyi naik drastis", "Gelombang tidak merambat"],
+        answer: 0
+      },
+      {
+        q: "Suara korban terdengar lebih keras saat mendekati area renggang pohon karena…",
+        options: ["Amplitudo turun", "Intensitas naik", "Frekuensi berubah", "Medium lebih padat"],
+        answer: 1
+      },
+      {
+        q: "Regu A mendengar lebih keras dari regu B karena…",
+        options: ["Regu A lebih dekat sumber", "Regu B salah hitung f", "Regu A menghadap dinding", "Regu B area resonansi"],
+        answer: 0
+      },
+      {
+        q: "Suara korban amplitude kecil tapi frekuensi tinggi. Ini mengindikasikan…",
+        options: ["Korban bersuara rendah", "Korban jauh tetapi nada tinggi", "Medium sangat padat", "Terjadi resonansi"],
+        answer: 1
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+    let chosen = null;
+
+    const quizBox = document.getElementById("quizBox");
+    const nextBtn = document.getElementById("nextBtn");
+    const finishBtn = document.getElementById("finishBtn");
+    const resultBox = document.getElementById("resultBox");
+
+    function showQuestion() {
+      let q = questions[current];
+      quizBox.innerHTML = `
+        <div class="question">${current + 1}. ${q.q}</div>
+        ${q.options.map((o, i) => `
+            <div class="option" onclick="selectOption(${i})">${o}</div>
+        `).join("")}
+    `;
+      nextBtn.style.display = "none";
+      chosen = null;
+    }
+
+    function selectOption(i) {
+      chosen = i;
+      let ops = document.querySelectorAll(".option");
+      ops.forEach(e => e.style.border = "1px solid rgba(255,255,255,0.03)");
+      ops[i].style.border = "1px solid var(--accent)";
+      nextBtn.style.display = "inline-block";
+
+      if (current === questions.length - 1) {
+        nextBtn.style.display = "none";
+        finishBtn.style.display = "inline-block";
+      }
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (chosen === questions[current].answer) score++;
+      current++;
+      showQuestion();
+    });
+
+    finishBtn.addEventListener("click", () => {
+      if (chosen === questions[current].answer) score++;
+
+      let percentage = Math.round((score / questions.length) * 100);
+      resultBox.innerHTML = `Skor Kamu: ${score} / ${questions.length} (${percentage}%)`;
+
+      document.getElementById("finalScore").value = score;
+
+      essaySection.style.display = "block";
+      quizBox.style.display = "none";
+      nextBtn.style.display = "none";
+      finishBtn.style.display = "none";
+    });
+
+    showQuestion();
+  </script>
+
+</body>
+
+</html>

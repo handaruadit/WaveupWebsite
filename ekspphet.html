@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD Misi SAR - Gelombang Bunyi</title>
+
+    <style>
+        :root {
+            --accent: #00c8ff;
+            --accent-dark: #0077b6;
+            --bg-dark: rgba(0, 0, 0, .55);
+            --glass-border: rgba(255, 255, 255, .08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: url('back.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #eaf6ff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+        header {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            padding: 16px 0;
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center;
+            color: #d8f3ff;
+            font-size: 14px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* CARD */
+        .card {
+            width: 100%;
+            background: var(--bg-dark);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(6px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 6px 26px rgba(0, 0, 0, 0.55);
+            margin-bottom: 22px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        /* Tombol */
+        .btn,
+        button {
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary,
+        button {
+            background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+            color: #001;
+            box-shadow: 0 0 14px rgba(0, 200, 255, 0.45);
+        }
+
+        .btn-primary:hover,
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.75);
+        }
+
+        button.secondary {
+            background: transparent;
+            border: 1px solid #9aa6b2;
+            color: #9aa6b2;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Tabel */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        input[type=number],
+        input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 6px 8px;
+            color: white;
+        }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================= HEADER ========================= -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT ME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!-- ========================= SIMULASI ========================= -->
+    <section style="padding:20px; max-width:1100px; margin:auto;">
+        <div class="instruction-box" style="
+        background:#e7efff;
+        border-left:6px solid #4b6cff;
+        padding:15px;
+        margin-bottom:20px;
+        border-radius:8px;
+        font-size:16px; color:#001;">
+            <b>Komandan:</b><br>
+            “Perhatikan baik-baik simulasi ini! Gerakkan sumber bunyinya, ubah frekuensi
+            dan amplitudonya. Amati bagaimana gelombang menyebar. Fokus!”
+        </div>
+
+        <p>Gunakan simulasi PhET berikut untuk memahami cara gelombang bunyi bergerak:</p>
+
+        <iframe src="https://phet.colorado.edu/sims/html/waves-intro/latest/waves-intro_all.html?locale=in" width="100%"
+            height="450px" frameborder="0" style="border-radius:10px;"></iframe>
+    </section>
+
+
+    <!-- ========================= LKPD ========================= -->
+    <div class="container">
+
+        <div class="card">
+            <h2>A. Tujuan Misi</h2>
+            <ul>
+                <li>Mengidentifikasi kecepatan rambat bunyi.</li>
+                <li>Menganalisis hubungan λ, T, dan v.</li>
+                <li>Melatih ketelitian dalam membaca data suara.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>B. Briefing Komandan</h2>
+            <p>Bunyi adalah gelombang longitudinal.</p>
+            <pre style="color:#00d5ff; font-size:18px;">v = λ / T</pre>
+        </div>
+
+        <div class="card">
+            <h2>C. Perlengkapan Operasi</h2>
+            <ul>
+                <li>Simulasi PhET</li>
+                <li>Penggaris virtual</li>
+                <li>Pembaca periode</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>D. Prosedur Misi</h2>
+            <ol>
+                <li>Buka simulasi.</li>
+                <li>Aktifkan alat ukur.</li>
+                <li>Ukur λ dan T.</li>
+                <li>Hitung kecepatan dengan v = λ/T.</li>
+            </ol>
+        </div>
+
+        <div class="card" style="max-width:1100px;margin:auto">
+
+            <form action="submit_eksperimen.php" method="POST">
+
+                <h3>E. Laporan Data Regu</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Frekuensi (Hz)</th>
+                            <th>Panjang Gelombang (m)</th>
+                            <th>Periode (s)</th>
+                            <th>Kecepatan (m/s)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="data-body">
+                        <tr>
+                            <td>1</td>
+                            <td><input name="f1" required></td>
+                            <td><input name="l1" required></td>
+                            <td><input name="t1" required></td>
+                            <td>
+                                <span class="v-text">-</span>
+                                <input type="hidden" name="v1" class="v-input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input name="f2" required></td>
+                            <td><input name="l2" required></td>
+                            <td><input name="t2" required></td>
+                            <td>
+                                <span class="v-text">-</span>
+                                <input type="hidden" name="v2" class="v-input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input name="f3" required></td>
+                            <td><input name="l3" required></td>
+                            <td><input name="t3" required></td>
+                            <td>
+                                <span class="v-text">-</span>
+                                <input type="hidden" name="v3" class="v-input">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+
+                <button type="button" id="calcBtn" class="btn-primary">
+                    Hitung Semua v
+                </button>
+
+                <button type="submit" class="btn-primary">
+                    Kirim Data
+                </button>
+
+                <button type="button" id="clearBtn" class="secondary">
+                    Bersihkan
+                </button>
+
+                <button onclick="window.location.href='solusi.html'">Selanjutnya</button>
+
+            </form>
+        </div>
+
+        <footer>
+            &copy; 2025 Platform Pembelajaran Fisika
+        </footer>
+
+        <script>
+            function num(v) {
+                let n = Number(v);
+                return isFinite(n) ? n : null;
+            }
+
+            document.getElementById("calcBtn").onclick = () => {
+                document.querySelectorAll("#data-body tr").forEach(row => {
+                    let l = num(row.querySelector("[name^=l]").value);
+                    let t = num(row.querySelector("[name^=t]").value);
+                    let text = row.querySelector(".v-text");
+                    let input = row.querySelector(".v-input");
+
+                    if (l !== null && t !== null && t > 0) {
+                        let v = l / t;
+                        text.innerText = v.toFixed(2);
+                        input.value = Math.round(v); // INT untuk DB
+                    } else {
+                        text.innerText = "-";
+                        input.value = "";
+                    }
+                });
+            };
+
+            document.getElementById("clearBtn").onclick = () => {
+                document.querySelectorAll("input").forEach(i => i.value = "");
+                document.querySelectorAll(".v-text").forEach(t => t.innerText = "-");
+            };
+        </script>
+
+</body>
+
+</html>

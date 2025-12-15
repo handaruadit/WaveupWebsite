@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman 7 - Mencari Sumber Suara</title>
+
+    <!-- Tema global -->
+    <link rel="stylesheet" href="style-global.css">
+
+    <style>
+        audio {
+            width: 100%;
+            margin: 12px 0;
+            border-radius: 10px;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #e8f4ff;
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: #aee2ff;
+            margin-bottom: 8px;
+        }
+
+        .image-box {
+            width: 100%;
+            margin: 10px 0 15px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-box img {
+            max-width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT ME</a></li>
+        <li><a href="index.html">LOG OUT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="main-wrapper">
+  <div class="card">
+
+
+    <p>
+      Pada pelatihan hari ini, kamu dan Komandan tim SAR WaveUp melanjutkan menyusuri hutan.
+      Ketika suasana mulai hening, Komandan berhenti dan memberi instruksi:
+    </p>
+
+    <p>
+      <i>"Perhatikan suara-suara di sekitar kalian. Setiap bunyi membawa energi-energi gelombang bunyi."</i>
+    </p>
+
+    <p>
+      Komandan menjelaskan bahwa gelombang bunyi adalah getaran yang merambat melalui udara. Karena bunyi
+      merupakan gelombang longitudinal, partikel udara bergetar maju-mundur dan membawa energi.
+    </p>
+
+    <p>Energi tersebut dapat dihitung dengan rumus:</p>
+
+    <p style="text-align:center; font-weight:bold;">E = ½ k A²</p>
+
+    <p>
+      Dengan <b>k</b> adalah bilangan gelombang dan <b>A</b> adalah amplitudo. Karena k = mω², rumusnya menjadi:
+    </p>
+
+    <p style="text-align:center; font-weight:bold;">E = ½ m ω² A²</p>
+
+    <p>
+      Jika ω diganti dengan 2πf, maka:
+    </p>
+
+    <p style="text-align:center; font-weight:bold;">E = 2π² m f² A²</p>
+
+    <p>
+      Artinya: semakin tinggi frekuensi dan amplitudo bunyi, semakin besar energi yang dibawanya.
+      Pengetahuan ini penting dalam operasi SAR untuk menebak arah dan jarak sumber suara.
+    </p>
+
+    <hr style="margin:20px 0; border-color:rgba(255,255,255,0.1);">
+
+    <p><b>Saat melanjutkan perjalanan...</b></p>
+
+    <!-- Audio teriakan (non-autoplay) -->
+    <audio controls>
+        <source src="orangteriak.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung audio.
+    </audio>
+
+    <p>Komandan:</p>
+
+    <!-- Gambar -->
+    <div class="image-box">
+        <img src="nangis.jpg" alt="Gambar Nangis">
+    </div>
+
+    <!-- Audio komandan (non-autoplay) -->
+    <audio controls>
+        <source src="suara 6.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung audio.
+    </audio>
+
+    <div style="display:flex; justify-content:center; margin-top:18px;">
+        <a href="identifikasi.html">
+            <button class="btn btn-yes">Baik, Komandan</button>
+        </a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+    © 2025 Platform Pembelajaran Fisika
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* ============================
+   RESET
+===============================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header h1 {
+    font-size: 50px;
+    font-family:"Lobster",cursive;
+    color: #aa8c74;
+    font-family: 'Cursive';
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+/* ============================
+   BODY
+===============================*/
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F7C1D7;
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ============================
+   HEADER
+===============================*/
+header {
+    background-color: #aa8c74;
+    padding: 20px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #aa8c74;
+    transform: scale(1.1);
+}
+
+/* ============================
+   MAIN CONTENT
+===============================*/
+.main-content {
+    padding: 50px 20px;
+    flex: 1;
+}
+
+#greeting {
+    font-size: 24px;
+    color: #aa8c74;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.button-container button {
+    padding: 15px 25px;
+    font-size: 16px;
+    background-color: #aa8c74;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    min-width: 250px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+}
+
+.button-container button:hover {
+    background-color: #aa8c74;
+    transform: translateY(-3px);
+}
+
+/* ============================
+   ILLUSTRATION
+===============================*/
+.illustration img {
+    width: 260px;
+    margin-top: 30px;
+    filter: drop-shadow(0px 6px 12px rgba(0,0,0,0.2));
+    transition: 0.3s ease-in-out;
+}
+
+.illustration img:hover {
+    transform: scale(1.05);
+}
+
+/* ============================
+   FOOTER
+===============================*/
+footer {
+    background-color: #aa8c74;
+    padding: 12px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px -4px 8px rgba(0,0,0,0.1);
+}
+

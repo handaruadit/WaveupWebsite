@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refleksi Pembelajaran – Misi SAR</title>
+
+<!-- Tema global -->
+<link rel="stylesheet" href="style-global.css">
+
+<style>
+    body {
+        background: url("back.jpg") no-repeat center center/cover;
+        color: #e8f4ff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    .main-wrapper {
+        max-width: 900px;
+        margin: 120px auto 50px;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: var(--accent);
+        margin-bottom: 25px;
+        text-shadow: 0 0 10px rgba(0,200,255,0.4);
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 0 18px rgba(0,0,0,0.45);
+        backdrop-filter: blur(6px);
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 18px;
+        margin-bottom: 6px;
+        color: #e8f4ff;
+    }
+
+    textarea {
+        width: 100%;
+        min-height: 90px;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.18);
+        background: rgba(0,0,0,0.3);
+        color: #e8f4ff;
+        font-size: 15px;
+        resize: vertical;
+    }
+
+    .next-btn {
+        margin-top: 30px;
+        display: block;
+        width: 220px;
+        text-align: center;
+        padding: 14px;
+        background: var(--accent);
+        color: #071226;
+        font-weight: bold;
+        border-radius: 12px;
+        text-decoration: none;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 4px 14px rgba(0,200,255,0.3);
+        transition: 0.2s;
+    }
+
+    .next-btn:hover {
+        background: var(--accent-dark);
+        transform: translateY(-2px);
+    }
+
+</style>
+ <link rel="stylesheet" href="style-global.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="logout.html">LOG OUT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- KONTEN UTAMA -->
+<div class="main-wrapper">
+  <h1>Refleksi Pembelajaran – Misi SAR</h1>
+
+  <div class="card">
+
+    <form action="submit_feedback.php" method="POST">
+
+      <label>1. Apa hal paling penting yang kamu pelajari hari ini terkait penggunaan gelombang bunyi dalam misi SAR?</label>
+      <textarea name="jawaban1" required></textarea>
+
+      <label>2. Bagian mana dari misi simulasi yang menurutmu paling menantang? Apa penyebabnya dan bagaimana kamu mengatasinya?</label>
+      <textarea name="jawaban2" required></textarea>
+
+      <label>3. Jika kamu menjadi anggota SAR sungguhan, bagaimana pengetahuan tentang frekuensi, panjang gelombang, dan kecepatan bunyi membantumu menyelamatkan korban?</label>
+      <textarea name="jawaban3" required></textarea>
+
+      <label>4. Dari proses diskusi dan perbandingan data antar-regu, apa yang kamu pelajari tentang pentingnya ketelitian dan kerja sama?</label>
+      <textarea name="jawaban4" required></textarea>
+
+      <label>5. Sebutkan satu kesalahan yang kamu atau regu kamu lakukan saat misi. Bagaimana cara memperbaikinya?</label>
+      <textarea name="jawaban5" required></textarea>
+
+      <label>6. Bagaimana perasaanmu ketika harus mengambil keputusan cepat berdasarkan data suara tanpa internet?</label>
+      <textarea name="jawaban6" required></textarea>
+
+      <label>7. Keterampilan apa yang meningkat hari ini?</label>
+      <textarea name="jawaban7" required></textarea>
+
+      <label>8. Jika kamu boleh mengubah satu hal agar regu lebih efektif, apa yang ingin kamu ubah dan kenapa?</label>
+      <textarea name="jawaban8" required></textarea>
+
+      <label>9. Dari seluruh kegiatan, apa pelajaran terbesar yang kamu dapat untuk kehidupan nyata selain fisika?</label>
+      <textarea name="jawaban9" required></textarea>
+
+      <label>10. Apakah tema SAR membuatmu lebih mudah memahami konsep gelombang bunyi dibandingkan cara belajar biasa? Jelaskan alasannya.</label>
+      <textarea name="jawaban10" required></textarea>
+
+      <div style="text-align:center; margin-top:30px;">
+        <button type="submit" class="next-btn">KIRIM REFLEKSI ➜</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 Platform Pembelajaran Fisika – Misi SAR
+</footer>
+
+</body>
+</html>

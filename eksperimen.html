@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platform Pembelajaran Fisika - Simulasi Gelombang Bunyi</title>
+    <link rel="stylesheet" href="materi.css"> 
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #eef2f3;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      #content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      #controls {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      .rangeRow {
+        margin-bottom: 15px;
+      }
+      canvas {
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="ekspluaran.html">BACK</a></li>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT ME</a></li>
+                    <li><a href="index.html">LOG OUT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="content">
+      <h2>Simulasi Gelombang Bunyi (Longitudinal)</h2>
+
+      <div id="controls">
+        <label>Amplitudo (A): <span id="ampText">30</span></label>
+        <div class="rangeRow">
+          <input id="amp" type="range" min="5" max="80" value="30" step="1">
+        </div>
+
+        <label>Frekuensi (Hz): <span id="freqText">440</span></label>
+        <div class="rangeRow">
+          <input id="freq" type="range" min="100" max="1000" value="440" step="1">
+        </div>
+
+        <button id="playBtn">▶ Play</button>
+        <button id="stopBtn">■ Stop</button>
+      </div>
+
+      <canvas id="c" width="900" height="300"></canvas>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Platform Pembelajaran Fisika</p>
+    </footer>
+
+<script>
+let ampSlider = document.getElementById("amp");
+let freqSlider = document.getElementById("freq");
+let ampText = document.getElementById("ampText");
+let freqText = document.getElementById("freqText");
+let playBtn = document.getElementById("playBtn");
+let stopBtn = document.getElementById("stopBtn");
+let c = document.getElementById("c");
+let ctx = c.getContext("2d");
+
+let audioCtx = null;
+let osc = null;
+let gainNode = null;
+
+function startSound() {
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  osc = audioCtx.createOscillator();
+  gainNode = audioCtx.createGain();
+
+  osc.type = "sine";
+  osc.frequency.value = freqSlider.value;
+
+  let vol = ampSlider.value / 80;
+  gainNode.gain.value = vol;
+
+  osc.connect(gainNode).connect(audioCtx.destination);
+  osc.start();
+}
+
+function stopSound() {
+  if (osc) osc.stop();
+  osc = null;
+}
+
+playBtn.onclick = () => startSound();
+stopBtn.onclick = () => stopSound();
+
+ampSlider.oninput = () => {
+  ampText.textContent = ampSlider.value;
+  let vol = ampSlider.value / 80;
+  if (gainNode) gainNode.gain.value = vol;
+};
+
+freqSlider.oninput = () => {
+  freqText.textContent = freqSlider.value;
+  if (osc) osc.frequency.value = freqSlider.value;
+};
+
+let t = 0;
+function draw() {
+  ctx.clearRect(0, 0, c.width, c.height);
+
+  let A = ampSlider.value;
+  let f = freqSlider.value;
+  let centerY = c.height / 2;
+
+  for (let x = 0; x < c.width; x += 10) {
+    let phase = (x * 0.02) - t * (f * 0.02);
+    let density = A * Math.sin(phase);
+
+    ctx.fillStyle = `rgba(0, 0, 255, ${(density + 80) / 160})`;
+    ctx.fillRect(x, centerY - 40, 8, 80);
+  }
+
+  t += 0.05;
+  requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+</body>
+</html>

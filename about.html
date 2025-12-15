@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang E-Modul – Platform Pembelajaran Fisika</title>
+
+    <style>
+        :root {
+            --accent: #132c32;
+            --accent-dark: #0c1215;
+            --bg-dark: rgba(0,0,0,0.55);
+            --glass-border: rgba(15, 14, 14, 0.12);
+            --text-light: #121416;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background: url("back.jpg") no-repeat center/cover fixed;
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            border-bottom: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            padding: 15px 25px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        header nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        header nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .content {
+            flex: 1;
+            width: 92%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(14, 13, 13, 0.07);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(300px);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.45);
+            line-height: 1.7;
+        }
+
+        .content h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+            color: var(--accent);
+            text-shadow: 0 0 6px rgba(10, 11, 11, 0.4);
+            text-align: center;
+        }
+
+        .content p {
+            margin-bottom: 18px;
+            font-size: 17px;
+        }
+
+        .content .highlight-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 14px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .content ul {
+            margin-top: 12px;
+            padding-left: 22px;
+        }
+
+        .content ul li {
+            margin-bottom: 10px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: rgba(0, 0, 0, 0.55);
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            backdrop-filter: blur(25px);
+            color: var(--text-light);
+        }
+    </style>
+    <link rel="stylesheet" href="style-global.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="materi.html">BACK</a></li>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="index.html">LOG OUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN SECTION ===== -->
+    <section class="content">
+        <h2>Tentang E-Modul Pembelajaran Fisika</h2>
+
+        <p>
+            E-modul pembelajaran ini dikembangkan menggunakan pendekatan 
+            <strong>Problem Based Learning (PBL)</strong> yang dikemas dalam bentuk 
+            <strong>misi penyelamatan oleh Tim SAR</strong>.  
+        </p>
+
+        <p>
+            Setiap siswa berperan sebagai anggota <strong>Tim SAR</strong> yang ditugaskan untuk 
+            menemukan dan menyelamatkan korban berdasarkan petunjuk suara di dalam hutan.  
+            Dengan konsep ini, belajar menjadi lebih immersif, kontekstual, dan menantang.
+        </p>
+
+        <div class="highlight-box">
+            <h3 style="color: var(--accent); margin-bottom: 10px;">Isi dan Komponen dalam E-Modul</h3>
+
+            <ul>
+                <li><strong>📘 Materi Pembelajaran:</strong> Berisi penjelasan lengkap tentang konsep gelombang bunyi, sumber suara, intensitas, frekuensi, dan arah datangnya bunyi.</li>
+                <li><strong>📝 LKPD Berbasis PBL:</strong> Siswa melakukan serangkaian investigasi layaknya tim SAR yang menganalisis rekaman suara, peta hutan, dan data lingkungan untuk menentukan posisi korban.</li>
+                <li><strong>🎧 Simulasi Audio:</strong> Tersedia rekaman suara yang harus dianalisis untuk menentukan sumber bunyi.</li>
+                <li><strong>🧭 Misi Lapangan Virtual:</strong> Siswa memilih area, memprediksi lokasi, dan menyelesaikan tantangan.</li>
+                <li><strong>📊 Grafik & Analisis:</strong> Termasuk grafik hubungan jarak dan intensitas suara untuk memudahkan proses penentuan posisi sumber.</li>
+                <li><strong>💬 Kuis & Evaluasi:</strong> Disediakan kuis terpandu dengan gaya visual yang sama untuk memastikan pemahaman konsep.</li>
+            </ul>
+        </div>
+
+        <p>
+            E-modul ini dirancang agar pengalaman belajar tidak hanya memahami teori, 
+            tetapi juga <strong>membangun keterampilan berpikir kritis, pemecahan masalah, dan analisis data</strong>,
+            sama seperti penyelamat profesional di dunia nyata.
+        </p>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2025 Platform Pembelajaran Fisika</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halaman 2 - Perjalanan Hutan SAR WaveUp</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('hutan.png') center/cover no-repeat fixed;
+        color: #eef4ff;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: rgba(0,0,0,0.55);
+        padding: 20px;
+        border-radius: 14px;
+        backdrop-filter: blur(4px);
+    }
+
+    button {
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 15px;
+        background: #00b3ff;
+        color: #001;
+    }
+
+    .hidden { display: none; }
+
+    #drawingCanvas {
+        border: 2px solid #fff;
+        margin-top: 10px;
+        background: #222;
+        cursor: crosshair;
+    }
+
+    .question-box {
+        background: rgba(255,255,255,0.05);
+        padding: 16px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Perjalanan di Hutan</h1>
+
+    <!-- Audio Komandan Intro -->
+    <audio id="audioIntro" preload="auto">
+        <source src="vnsatu.mp3" type="audio/mpeg">
+    </audio>
+
+    <p>Komandan Raka akan memulai perjalananmu di hutan ini.</p>
+
+    <button id="btnMulai">Baik Komandan</button>
+
+    <!-- Bagian setelah tombol ditekan -->
+    <div id="bagian2" class="hidden">
+        <p>
+            Komandan Raka:<br>
+            “Saat kita berjalan di hutan ini, coba dengarkan baik-baik suara di sekitar kita.
+            Setiap hewan memiliki kemampuan pendengaran yang berbeda-beda.”
+        </p>
+
+        <ul>
+            <li>Gajah mampu mendengar suara infrasonik (di bawah 20 Hz).</li>
+            <li>Manusia berada di rentang audiosonik 20 – 20.000 Hz.</li>
+            <li>Kelelawar & lumba-lumba mampu mendengar ultrasonik.</li>
+        </ul>
+
+        <p>
+            “Pendengaran hewan-hewan ini membantu mereka bertahan hidup,
+            dan prinsip inilah yang nantinya akan kita manfaatkan dalam misi SAR.”
+        </p>
+
+        <!-- Audio frekuensi audiosonik -->
+        <audio id="audioFreq" preload="auto">
+            <source src="infra.mp3" type="audio/mpeg">
+        </audio>
+
+        <button id="btnFrekuensi">Putar Audio Frekuensi</button>
+
+        <!-- Pertanyaan + Canvas -->
+        <div class="question-box">
+            <p><strong>Pertanyaan:</strong><br>
+            Dari yang komandan sampaikan tadi, ada tiga jenis suara berdasarkan frekuensi.
+            Sebutkan salah satunya dan gambarkan contohnya!</p>
+
+            <canvas id="drawingCanvas" width="350" height="200"></canvas><br>
+            <button id="undoBtn">Undo</button>
+        </div>
+
+        <button id="btnKeHalaman4">Lanjut ke Halaman 4</button>
+    </div>
+
+</div>
+
+<script>
+// ================= AUDIO =================
+const audioIntro = document.getElementById("audioIntro");
+const audioFreq = document.getElementById("audioFreq");
+const bagian2 = document.getElementById("bagian2");
+
+// Klik mulai → munculkan bagian berikut
+btnMulai.onclick = () => {
+    audioIntro.currentTime = 0;
+    audioIntro.play();
+    bagian2.classList.remove("hidden");
+    bagian2.scrollIntoView({ behavior: "smooth" });
+};
+
+// Putar audio frekuensi
+document.getElementById("btnFrekuensi").onclick = () => {
+    audioFreq.currentTime = 0;
+    audioFreq.play();
+};
+
+// ================= CANVAS =================
+const canvas = document.getElementById("drawingCanvas");
+const ctx = canvas.getContext("2d");
+let drawing = false;
+let history = [];
+
+function saveState() {
+    history.push(canvas.toDataURL());
+}
+
+canvas.addEventListener("mousedown", (e) => {
+    drawing = true;
+    saveState();
+    draw(e);
+});
+
+canvas.addEventListener("mousemove", draw);
+
+canvas.addEventListener("mouseup", () => {
+    drawing = false;
+    ctx.beginPath();
+});
+
+canvas.addEventListener("mouseleave", () => {
+    drawing = false;
+    ctx.beginPath();
+});
+
+function draw(e) {
+    if (!drawing) return;
+    const rect = canvas.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
+
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "#00b3ff";
+
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+}
+
+// Undo
+document.getElementById("undoBtn").onclick = () => {
+    if (history.length > 0) {
+        let last = history.pop();
+        let img = new Image();
+        img.src = last;
+        img.onload = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0);
+        };
+    } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+};
+
+// ================= NAVIGASI =================
+document.getElementById("btnKeHalaman4").onclick = () => {
+    window.location.href = "halaman4.html";
+};
+</script>
+
+</body>
+</html>

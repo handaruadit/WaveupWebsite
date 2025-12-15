@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misi SAR Berhasil</title>
+
+<!-- Tema Global -->
+<link rel="stylesheet" href="style-global.css">
+
+<style>
+    body {
+        background: url("back.jpg") no-repeat center center/cover;
+        color: #e8f4ff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    .main-wrapper {
+        max-width: 900px;
+        margin: 130px auto 50px;
+        padding: 20px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 0 18px rgba(0,0,0,0.45);
+        backdrop-filter: blur(6px);
+        animation: fadeIn 1s ease;
+    }
+
+    img.sukses-img {
+        width: 260px;
+        margin-bottom: 20px;
+        border-radius: 14px;
+        box-shadow: 0 0 18px rgba(0,200,255,0.3);
+    }
+
+    h1 {
+        color: #00ff9d;
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px rgba(0,255,157,0.4);
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+        color: #e8f4ff;
+    }
+
+    .finish-btn {
+        margin-top: 25px;
+        display: inline-block;
+        padding: 14px 28px;
+        background: var(--accent);
+        color: #021c2f;
+        font-weight: bold;
+        border-radius: 12px;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0,200,255,0.4);
+        transition: 0.25s ease;
+    }
+
+    .finish-btn:hover {
+        background: var(--accent-dark);
+        transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+</style>
+ <link rel="stylesheet" href="style-global.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="logout.html">LOG OUT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- KONTEN UTAMA -->
+<div class="main-wrapper">
+    <div class="card">
+
+        <img src="selamat.jpg" alt="Misi Berhasil" class="sukses-img">
+
+        <h1>🔥 Misi SAR Berhasil! 🔥</h1>
+
+        <p>Korban berhasil ditemukan dan dievakuasi dengan selamat.</p>
+        <p>Komandan mengucapkan terima kasih atas kerja keras, ketelitian, dan keberanian kalian dalam menjalankan misi penyelamatan ini.</p>
+        <p>Teruslah berlatih, karena setiap keputusan cepat dapat menyelamatkan nyawa.</p>
+
+        <a href="home.html" class="finish-btn">Selesai</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 Platform Pembelajaran Fisika – Misi SAR
+</footer>
+
+</body>
+</html>

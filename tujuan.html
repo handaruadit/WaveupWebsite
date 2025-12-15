@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tujuan Pembelajaran – Gelombang Bunyi</title>
+
+    <style>
+        :root {
+            --accent: #00c8ff;
+            --accent-dark: #0077b6;
+            --text-light: #e9f7ff;
+            --glass: rgba(255,255,255,0.08);
+            --glass-border: rgba(255,255,255,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background: url("back.jpg") no-repeat center/cover fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-light);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            width: 100%;
+            background: rgba(0,0,0,0.55);
+            padding: 15px 25px;
+            border-bottom: 1px solid var(--glass-border);
+            backdrop-filter: blur(8px);
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* ===== CONTENT ===== */
+        .content {
+            flex: 1;
+            width: 92%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            backdrop-filter: blur(300px);
+            box-shadow: 0 0 25px rgba(0,0,0,0.45);
+        }
+
+        h2 {
+            color: var(--accent);
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        .list-box {
+            margin-top: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .list-box ul {
+            list-style: decimal;
+            margin-left: 20px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            background: rgba(0,0,0,0.55);
+            padding: 15px;
+            border-top: 1px solid var(--glass-border);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="materi.html">BACK</a></li>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT ME</a></li>
+                <li><a href="index.html">LOG OUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="content">
+        <h2>Tujuan Pembelajaran<br>Materi Gelombang Bunyi</h2>
+
+        <p>
+            Setelah mengikuti rangkaian kegiatan pembelajaran dan misi pencarian oleh Tim SAR,
+            peserta didik diharapkan mampu mencapai tujuan-tujuan berikut:
+        </p>
+
+        <div class="list-box">
+            <ul>
+                <li>Menjelaskan pengertian gelombang bunyi.</li>
+                <li>Mengidentifikasi karakteristik gelombang bunyi.</li>
+                <li>Menganalisis perbedaan bunyi berdasarkan tinggi-rendah, kualitas/warna bunyi, dan kuat-lemahnya bunyi.</li>
+                <li>Menganalisis nada-nada dan frekuensi gelombang pada dawai, pipa organa terbuka, dan pipa organa tertutup.</li>
+                <li>Menganalisis cepat rambat gelombang bunyi pada zat padat, cair, dan gas.</li>
+                <li>Mengidentifikasi berbagai gejala gelombang bunyi dalam kehidupan sehari-hari.</li>
+                <li>Menganalisis energi, intensitas, dan taraf intensitas bunyi.</li>
+                <li>Menganalisis penerapan gelombang bunyi pada kehidupan nyata.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Platform Pembelajaran Fisika</p>
+    </footer>
+
+</body>
+</html>
